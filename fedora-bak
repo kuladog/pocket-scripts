@@ -2,11 +2,12 @@
 
 GZIP=Fedora-Setup_$(date +%Y-%m-%d).tgz
 
-# If there's a 'fedora-setup' directory, tarball it
+# if there's a 'fedora-setup' directory, tarball it
+
 if [[ -d ~/Projects/fedora-setup/ ]]; then
-	cd ~/Projects/
-	tar -czvf "$GZIP" fedora-setup
-	echo "Successfully created archive!"
+  cd ~/Projects/
+  tar -czvf "$GZIP" fedora-setup
+  echo "Successfully created archive!"
 else
-	echo "ERROR : Could not find directory to be archived"
+  echo "ERROR : Could not find directory to be archived"
 fi
