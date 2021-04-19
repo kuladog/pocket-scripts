@@ -9,9 +9,9 @@ if [[ $rate -eq 24 ]]; then
 fi
 
 if [[ ! $1 ]]; then
-	for i in *.wav; do
-	ffmpeg -i "$i" -sample_fmt s"${sample}" -b:a 320000 "${i%.*}.flac"
-	done
+  for i in *.wav; do
+    ffmpeg -i "$i" -sample_fmt s"${sample}" -b:a 320000 "${i%.*}.flac"
+  done
 else
 	ffmpeg -i "$file" -sample_fmt s"${sample}" -b:a 320000 "${file%.*}.flac"
 fi
