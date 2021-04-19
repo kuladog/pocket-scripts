@@ -5,7 +5,7 @@ file=$1
 read -rp "Sample rate: " rate
 
 if [[ $rate -eq 24 ]]; then
-	rate=32
+  rate=32
 fi
 
 if [[ ! $1 ]]; then
@@ -13,5 +13,5 @@ if [[ ! $1 ]]; then
     ffmpeg -i "$i" -sample_fmt s"${sample}" -b:a 320000 "${i%.*}.flac"
   done
 else
-	ffmpeg -i "$file" -sample_fmt s"${sample}" -b:a 320000 "${file%.*}.flac"
+  ffmpeg -i "$file" -sample_fmt s"${sample}" -b:a 320000 "${file%.*}.flac"
 fi
