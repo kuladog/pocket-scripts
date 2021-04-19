@@ -11,6 +11,6 @@ while [[ $(date -u +%s) -le $END ]]
       nordvpn c
       break
     else
-	    continue
+      continue
     fi
   done
