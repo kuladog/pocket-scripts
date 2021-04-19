@@ -4,7 +4,7 @@ file=$1
 
 read -rp "Sample rate: " rate
 
-if [ $sample -eq 24 ]; then
+if [ $rate -eq 24 ]; then
 	rate=32
 fi
 
