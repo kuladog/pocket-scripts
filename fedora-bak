@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+# If there's a 'fedora-setup' directory, tarball it
+
+GZIP=Fedora-Setup_$(date +%Y-%m-%d).tgz
+
+if [ -d ~/Projects/fedora-setup/ ]; then
+	cd ~/Projects/
+	tar -czvf "$GZIP" fedora-setup
+	echo "Successfully created archive!"
+else
+	echo "ERROR : Could not find directory to be archived"
+fi
