@@ -4,11 +4,11 @@ file=$1
 
 read -rp "Sample rate: " rate
 
-if [ $rate -eq 24 ]; then
+if [[ $rate -eq 24 ]]; then
 	rate=32
 fi
 
-if [ ! $1 ]; then
+if [[ ! $1 ]]; then
 	for i in *.wav; do
 	ffmpeg -i "$i" -sample_fmt s"${sample}" -b:a 320000 "${i%.*}.flac"
 	done
