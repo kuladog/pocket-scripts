@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+# batch exif data scrubber, all files in directory
+
+for i in *.*; do 
+  echo 'Cleaning.. "$i"' 
+  exiftool -a -all= -overwrite_original "$i" 
+  echo 'Done'
+done
