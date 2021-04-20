@@ -2,20 +2,19 @@
 
 # batch exif data scrubber for all images
 
-recursive=$1
+recurse=$1
 
 IFS=$(echo -en "\n\b")
 
 # recursive limited to 3 levels
-if [[ $recursive = "-r" ]]; then
-  recursive=3
+if [[ $recurse = "-r" ]]; then
+  recurse=3
 else
-  recursive=0
+  recurse=0
 fi
 
-images=$(find * -maxdepth $recursive -type f -exec file --mime-type '{}' \; \
+images=$(find * -maxdepth $recurse -type f -exec file --mime-type '{}' \; \
 | awk -F: '{if ($2 ~/image\//) print $1}')
-
 
 for i in $images; do
 	echo "Cleaning.." "$i"
