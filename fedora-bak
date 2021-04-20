@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
 
-# if there's a 'fedora-setup' directory, tarball it
-
 GZIP=Fedora-Setup_$(date +%Y-%m-%d).tgz
 
+# if there's a 'fedora-setup' directory, tarball it
 if [[ -d ~/Projects/fedora-setup/ ]]; then
     ( 
       cd ~/Projects/;
