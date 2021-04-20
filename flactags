@@ -3,7 +3,7 @@
 # display all flac tags in current directory
 
 for f in *.flac; do
-        metaflac --export-tags-to=/tmp/tags.tmp "$f"
+  metaflac --export-tags-to=/tmp/tags.tmp "$f"
 done
 
 awk -F= 'index($0,"=") > 0 {print $1}' /tmp/tags.tmp | sort -u
