@@ -4,6 +4,8 @@
 
 recursive=$1
 
+IFS=$(echo -en "\n\b")
+
 # recursive limited to 3 levels
 if [[ $recursive = "-r" ]]; then
   recursive=3
@@ -14,10 +16,10 @@ fi
 images=$(find * -maxdepth $recursive -type f -exec file --mime-type '{}' \; \
 | awk -F: '{if ($2 ~/image\//) print $1}')
 
-IFS=$(echo -en "\n\b")
 
 for i in $images; do
 	echo "Cleaning.." "$i"
 	exiftool -a -all= -overwrite_original "$i"
 	echo
 done
+
