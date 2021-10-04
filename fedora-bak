@@ -1,12 +1,14 @@
 #!/usr/bin/env bash
 
-GZIP=Fedora-Setup_$(date +%Y-%m-%d).tgz
+
+ZIPPY=Fedora-Setup_$(date +%Y-%m-%d).tgz
+
 
 # if there's a 'fedora-setup' directory, tarball it
 if [[ -d ~/Projects/fedora-setup/ ]]; then
     ( 
       cd ~/Projects/;
-      tar -czvf "$GZIP" fedora-setup 
+      tar -czvf "$ZIPPY" fedora-setup 
     )
     echo "Successfully created archive!"
   else
