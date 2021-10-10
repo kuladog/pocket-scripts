@@ -6,7 +6,7 @@ END=$(date -ud "$RUN" +%s)
 
 
 # if nordvpn not installed, exit script
-if ! [ -x "$(command -v nordvpn)" ]; then
+if ! [[ -x $(command -v nordvpn) ]]; then
     echo "ERROR : NordVPN is not installed." >&2
     exit 0
 fi
